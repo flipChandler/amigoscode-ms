@@ -1,0 +1,7 @@
+com/amigoscode/customer/controllers/CustomerController.class
+com/amigoscode/customer/services/CustomerService.class
+com/amigoscode/customer/dtos/CustomerRegistrationRequest.class
+com/amigoscode/customer/CustomerApplication.class
+com/amigoscode/customer/repositories/CustomerRepository.class
+com/amigoscode/customer/domains/Customer.class
+com/amigoscode/customer/domains/Customer$CustomerBuilder.class
