@@ -19,7 +19,13 @@ public record CustomerController(CustomerService customerService) {
         return ResponseEntity.ok(customerService.findAll());
     }
 
-        @PostMapping
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<CustomerResponse> findById(@PathVariable Integer id) {
+        CustomerResponse response = customerService.findById(id);
+        return ResponseEntity.ok(response);
+    }
+
+    @PostMapping
     public void registerCustomer(@RequestBody CustomerRegistrationRequest customerRegistrationRequest) {
         log.info("new customer registration {}", customerRegistrationRequest);
         customerService.registerCustomer(customerRegistrationRequest);

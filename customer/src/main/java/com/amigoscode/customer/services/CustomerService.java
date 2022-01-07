@@ -7,6 +7,7 @@ import com.amigoscode.customer.repositories.CustomerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -29,5 +30,16 @@ public record CustomerService(CustomerRepository customerRepository) {
                 customer.getFirstName(),
                 customer.getLastName(),
                 customer.getEmail())).collect(Collectors.toList());
+    }
+
+    public CustomerResponse findById(Integer id) {
+        Optional<Customer> optional = customerRepository.findById(id);
+        if (optional.isPresent()) {
+            return new CustomerResponse(
+                    optional.get().getFirstName(),
+                    optional.get().getLastName(),
+                    optional.get().getEmail());
+        }
+        throw new RuntimeException("Customer not found");
     }
 }
