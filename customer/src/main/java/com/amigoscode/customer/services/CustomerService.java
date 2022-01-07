@@ -4,6 +4,7 @@ import com.amigoscode.customer.domains.Customer;
 import com.amigoscode.customer.dtos.CustomerRegistrationRequest;
 import com.amigoscode.customer.dtos.CustomerResponse;
 import com.amigoscode.customer.repositories.CustomerRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +12,10 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public record CustomerService(CustomerRepository customerRepository) {
+@AllArgsConstructor
+public class CustomerService {
+
+    private final CustomerRepository customerRepository;
 
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()

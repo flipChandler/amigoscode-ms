@@ -3,6 +3,7 @@ package com.amigoscode.customer.controllers;
 import com.amigoscode.customer.dtos.CustomerRegistrationRequest;
 import com.amigoscode.customer.dtos.CustomerResponse;
 import com.amigoscode.customer.services.CustomerService;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,10 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("api/v1/customers")
-public record CustomerController(CustomerService customerService) {
+@AllArgsConstructor
+public class CustomerController {
+
+    private final CustomerService customerService;
 
     @GetMapping
     public ResponseEntity<List<CustomerResponse>> findAll() {
