@@ -1,0 +1,9 @@
+/home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/services/CustomerService.java
+/home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/configs/CustomerConfig.java
+/home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/CustomerApplication.java
+/home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/repositories/CustomerRepository.java
+/home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/domains/Customer.java
+/home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/controllers/CustomerController.java
+/home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/dtos/CustomerRegistrationRequest.java
+/home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/dtos/CustomerResponse.java
+/home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/dtos/FraudCheckResponse.java

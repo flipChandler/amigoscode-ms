@@ -14,8 +14,8 @@ public class FraudCheckHistoryController {
 
     private FraudCheckHistoryService fraudCheckHistoryService;
 
-    @GetMapping(value = "/{customerId}")
-    public FraudCheckResponse isFraudster(@PathVariable Integer customerId) {
+    @GetMapping(path = "{customerId")
+    public FraudCheckResponse isFraudster(@PathVariable("customerId") Integer customerId) {
         boolean isFraudulentCustomer = fraudCheckHistoryService.isFraudulentCustomer(customerId);
         log.info("fraud check request for customer {}", customerId);
         return new FraudCheckResponse(isFraudulentCustomer);

@@ -6,13 +6,10 @@ import com.amigoscode.customer.dtos.CustomerResponse;
 import com.amigoscode.customer.dtos.FraudCheckResponse;
 import com.amigoscode.customer.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -24,9 +21,6 @@ public class CustomerService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Value("${fraud-check.host}")
-    private String fraudCheckHost;
-
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
                 .firstName(request.firstName())
@@ -37,13 +31,14 @@ public class CustomerService {
         // TODO: check if email not taken
         customerRepository.saveAndFlush(customer);
         // TODO: check if fraudster
-        Map<String, String> uriVariables = new HashMap<>();
-        uriVariables.put("id", "" + customer.getId());
+
         FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-                fraudCheckHost + "/fraud-check/{id}",
+                "http://FRAUD/api/v1/fraud-check/{customerId}",
                 FraudCheckResponse.class,
-                uriVariables
+                customer.getId()
         );
+
+        System.out.println("rest "+ restTemplate.toString());
 
         if (fraudCheckResponse.isFraudster()) {
             throw new IllegalStateException("fraudster");
