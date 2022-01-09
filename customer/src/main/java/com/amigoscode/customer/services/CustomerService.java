@@ -2,13 +2,14 @@ package com.amigoscode.customer.services;
 
 import com.amigoscode.clients.fraud.FraudCheckResponse;
 import com.amigoscode.clients.fraud.FraudClient;
+import com.amigoscode.clients.notification.NotificationClient;
+import com.amigoscode.clients.notification.NotificationRequest;
 import com.amigoscode.customer.domains.Customer;
 import com.amigoscode.customer.dtos.CustomerRegistrationRequest;
 import com.amigoscode.customer.dtos.CustomerResponse;
 import com.amigoscode.customer.repositories.CustomerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,10 +20,8 @@ import java.util.stream.Collectors;
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
-
-    private final RestTemplate restTemplate;
-
     private final FraudClient fraudClient;
+    private final NotificationClient notificationClient;
 
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
@@ -40,7 +39,15 @@ public class CustomerService {
         if (fraudCheckResponse.isFraudster()) {
             throw new IllegalStateException("fraudster");
         }
-        // TODO: send notification
+        // TODO: make it async. i.e. add to queue
+        notificationClient.sendNotification(
+                new NotificationRequest(
+                        customer.getId(),
+                        customer.getEmail(),
+                        String.format("Hi %s, welcome to Amigoscode...", customer.getFirstName())
+                )
+        );
+
     }
 
     public List<CustomerResponse> findAll() {
