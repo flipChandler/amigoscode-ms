@@ -17,7 +17,7 @@ public class RabbitMQConfig {
 
     private final ConnectionFactory connectionFactory;
 
-    // send messages to the qeue
+    // send messages to the queue
     @Bean
     public AmqpTemplate amqpTemplate() {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
@@ -25,7 +25,7 @@ public class RabbitMQConfig {
         return rabbitTemplate;
     }
 
-    // allow receiving messages from the qeue
+    // allow receiving messages from the queue
     @Bean
     public SimpleRabbitListenerContainerFactory simpleRabbitListenerContainerFactory() {
         SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
