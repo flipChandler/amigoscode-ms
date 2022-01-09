@@ -6,4 +6,3 @@
 /home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/controllers/CustomerController.java
 /home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/dtos/CustomerRegistrationRequest.java
 /home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/dtos/CustomerResponse.java
-/home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/customer/src/main/java/com/amigoscode/customer/dtos/FraudCheckResponse.java

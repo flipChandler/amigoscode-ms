@@ -1,6 +1,5 @@
 /home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/fraud/src/main/java/com/amigoscode/fraud/services/FraudCheckHistoryService.java
 /home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/fraud/src/main/java/com/amigoscode/fraud/repositories/FraudCheckHistoryRepository.java
-/home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/fraud/src/main/java/com/amigoscode/fraud/dtos/FraudCheckResponse.java
 /home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/fraud/src/main/java/com/amigoscode/fraud/FraudApplication.java
 /home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/fraud/src/main/java/com/amigoscode/fraud/domains/FraudCheckHistory.java
 /home/felipe/Documentos/cursos/amigoscode/ws-microservices/amigosservices/fraud/src/main/java/com/amigoscode/fraud/controllers/FraudCheckHistoryController.java

@@ -6,5 +6,4 @@ com/amigoscode/customer/CustomerApplication.class
 com/amigoscode/customer/repositories/CustomerRepository.class
 com/amigoscode/customer/domains/Customer.class
 com/amigoscode/customer/dtos/CustomerResponse.class
-com/amigoscode/customer/dtos/FraudCheckResponse.class
 com/amigoscode/customer/domains/Customer$CustomerBuilder.class
